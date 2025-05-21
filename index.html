@@ -4,129 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brooks Media LLC</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
-      color: #ffffff;
-    }
-    header {
-      background-color: #0a0a0a;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #333;
-    }
-    header h1 {
-      font-size: 20px;
-      color: #a259ff;
-      margin: 0;
-    }
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #a259ff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .hero {
-      background: radial-gradient(circle at center, #1c1c1c 0%, #0a0a0a 100%);
-    }
-
-    .hero img {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: #a259ff;
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .services li::before {
-      content: "✔️";
-      margin-right: 10px;
-      color: #a259ff;
-    }
-
-    .contact a {
-      color: #a259ff;
-      text-decoration: none;
-      font-size: 20px;
-    }
-
-    footer {
-      background-color: #0a0a0a;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1>BROOKS MEDIA LLC</h1>
+    <img src="hero-logo.png" alt="Brooks Media Logo" class="hero-logo" />
     <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="section hero">
-    <img src="https://raw.githubusercontent.com/arcardio/bmedia.world/main/logo.png" alt="Brooks Media Logo" />
-    <h2>Creative Talent Management & Media</h2>
-  </section>
+  <main>
+    <section id="about" class="fade-section">
+      <h2>About</h2>
+      <p>We provide social media talent management, video editing, and graphic design.</p>
+    </section>
 
-  <section class="section" id="about">
-    <h2>About</h2>
-    <p>We provide social media talent management, video editing, and graphic design.</p>
-  </section>
+    <section id="services" class="fade-section">
+      <h2>Services</h2>
+      <ul>
+        <li>Talent Management</li>
+        <li>Video Editing & Graphic Design</li>
+      </ul>
+    </section>
 
-  <section class="section services" id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Talent Management</li>
-      <li>Video Editing & Graphic Design</li>
-    </ul>
-  </section>
-
-  <section class="section contact" id="contact">
-    <h2>Contact</h2>
-    <p><a href="mailto:brooksmediasc@gmail.com">brooksmediasc@gmail.com</a></p>
-  </section>
+    <section id="contact" class="fade-section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:brooksmediasc@gmail.com">brooksmediasc@gmail.com</a></p>
+    </section>
+  </main>
 
   <footer>
-    © 2025 Brooks Media LLC
+    <p>&copy; 2025 Brooks Media LLC</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

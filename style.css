@@ -1,97 +1,45 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0a0a0a;
+  color: white;
 }
-
 header {
-    background: #0d0d0d;
-    padding: 1em 2em;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #1f1f1f;
+  text-align: center;
+  padding: 20px;
+  background: black;
 }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: #a259ff;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5em;
-}
-
-nav ul li a {
-    color: #a259ff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffffff;
-}
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4em 2em;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
-}
-
 .hero-logo {
-    max-width: 300px;
-    height: auto;
-    box-shadow: 0 0 30px #a259ff;
-    border-radius: 10px;
+  max-width: 300px;
+  margin-bottom: 10px;
 }
-
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+nav a {
+  color: #a259ff;
+  text-decoration: none;
+  font-weight: bold;
+}
 section {
-    padding: 4em 2em;
-    text-align: center;
+  padding: 50px 20px;
+  text-align: center;
 }
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: #a259ff;
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
-ul {
-    list-style: none;
-    padding: 0;
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-ul li {
-    margin: 0.5em 0;
-    transition: transform 0.3s, color 0.3s;
-}
-
-ul li:hover {
-    transform: scale(1.05);
-    color: #a259ff;
-}
-
 footer {
-    text-align: center;
-    padding: 2em;
-    background-color: #1a1a1a;
-    color: #666;
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #a259ff;
 }
