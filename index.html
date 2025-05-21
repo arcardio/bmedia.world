@@ -1,57 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMedia World</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brooks Media LLC</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+    }
+    header {
+      background-color: #0a0a0a;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      font-size: 20px;
+      color: #a259ff;
+      margin: 0;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #a259ff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero {
+      background: radial-gradient(circle at center, #1c1c1c 0%, #0a0a0a 100%);
+    }
+
+    .hero img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #a259ff;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .services li::before {
+      content: "✔️";
+      margin-right: 10px;
+      color: #a259ff;
+    }
+
+    .contact a {
+      color: #a259ff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">BROOKS MEDIA LLC</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <img src="logo.png" alt="Brooks Media Logo" class="hero-logo">
-    </section>
+  <header>
+    <h1>BROOKS MEDIA LLC</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>We provide social media talent management, video editing, and graphic design.</p>
-    </section>
+  <section class="section hero">
+    <img src="https://raw.githubusercontent.com/arcardio/bmedia.world/main/logo.png" alt="Brooks Media Logo" />
+    <h2>Creative Talent Management & Media</h2>
+  </section>
 
-    <section id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>Talent Management</li>
-            <li>Video Editing & Graphic Design</li>
-        </ul>
-    </section>
+  <section class="section" id="about">
+    <h2>About</h2>
+    <p>We provide social media talent management, video editing, and graphic design.</p>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:brooksmediasc@gmail.com">brooksmediasc@gmail.com</a></p>
-    </section>
+  <section class="section services" id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Talent Management</li>
+      <li>Video Editing & Graphic Design</li>
+    </ul>
+  </section>
 
-    <footer>
-        <p>© 2025 Brooks Media LLC</p>
-    </footer>
+  <section class="section contact" id="contact">
+    <h2>Contact</h2>
+    <p><a href="mailto:brooksmediasc@gmail.com">brooksmediasc@gmail.com</a></p>
+  </section>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+  <footer>
+    © 2025 Brooks Media LLC
+  </footer>
+
 </body>
 </html>
