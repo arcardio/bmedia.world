@@ -1,14 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const faders = document.querySelectorAll('.fade-section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
+const navLinks = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('.fade-section');
 
-  faders.forEach(section => {
-    observer.observe(section);
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+
+    sections.forEach(section => {
+      section.classList.add('hidden');
+    });
+
+    document.getElementById(targetId).classList.remove('hidden');
+    document.getElementById(targetId).classList.add('fade-in');
   });
 });
