@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brooks Media LLC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="entrance">
+    <div class="logo-background" id="logoBackground"></div>
+    <h1 class="tagline glow">A Place Where Ideas Thrive</h1>
+    <button class="enter-button glow" onclick="enterSite()">Enter</button>
+  </div>
+
+  <div class="main-content hidden">
+    <h1 class="welcome glow">Welcome to Brooks Media LLC</h1>
+    <p class="description glow">
+      We make the impossible, possible. Whether you’re starting out on your streaming journey,
+      preparing to explore a career in videography,
+      or simply seeking a way to represent yourself and brand online in a completely original way.
+      We offer services and personal consultations to best suit your needs.
+      We also rent equipment so you can try new and creative ideas while on a budget.
+      Let us help you spread your wings.
+    </p>
+    <div class="buttons">
+      <button class="nav-button glow" onclick="showSection('about')">About</button>
+      <button class="nav-button glow" onclick="showSection('services')">Services</button>
+      <button class="nav-button glow" onclick="showSection('contact')">Contact</button>
+    </div>
+    <div class="info-section hidden" id="about">Formed in 2020 our goal is to bring creativity to life, through art, collaboration and innovation.</div>
+    <div class="info-section hidden" id="services">video editing, graphic design, influencer management, and rental of computer and video equipment.</div>
+    <div class="info-section hidden" id="contact">brooksmediasc@gmail.com</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

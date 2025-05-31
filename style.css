@@ -1,0 +1,67 @@
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+.glow {
+  text-shadow: 0 0 5px #fff, 0 0 10px purple, 0 0 15px purple, 0 0 20px purple;
+}
+
+.entrance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000000, #2e003e);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.enter-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav-button {
+  margin: 10px;
+  padding: 10px 15px;
+  background: transparent;
+  border: 2px solid purple;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-section {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
