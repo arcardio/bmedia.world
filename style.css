@@ -9,7 +9,7 @@ body {
 .logo-bg {
   background: url('logo.png.PNG') no-repeat center center;
   background-size: contain;
-  opacity: 0.12;
+  opacity: 0.25;
   position: absolute;
   width: 100%;
   height: 100%;
