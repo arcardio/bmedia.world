@@ -1,6 +1,8 @@
 body {
   margin: 0;
+  h1 {
   font-family: 'Lettres Ombrees Ornees', serif;
+}
   background-color: black;
   color: white;
   overflow: hidden;
