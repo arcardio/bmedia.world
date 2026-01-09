@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brooks Media LLC</title>
   <link rel="stylesheet" href="style.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Google font for paragraph -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -18,6 +19,15 @@
 
   <!-- Main Content Page -->
   <div class="main-content hidden" id="mainContent">
+
+    <!-- Animated background -->
+    <div class="animated-bg">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>
+
+    <!-- Content -->
     <h1 class="welcome">Welcome to Brooks Media LLC</h1>
     <p class="description">
       We make the impossible, possible. Whether you’re starting out on your streaming journey,
@@ -27,9 +37,16 @@
       We also rent equipment so you can try new and creative ideas while on a budget.
       Let us help you spread your wings.
     </p>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button onclick="goBack()">← Back</button>
+      <button onclick="goNext()">Continue →</button>
+    </div>
+
   </div>
 
-  <!-- LOAD JS -->
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
