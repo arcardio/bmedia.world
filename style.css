@@ -1,141 +1,170 @@
-/* =====================
-   Global Styles
-===================== */
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
   background-color: black;
   color: white;
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =====================
-   Entrance Page
-===================== */
+h1 {
+  font-family: 'Lettres Ombrees Ornees', serif;
+}
+
+/* =========================
+   ENTRANCE PAGE
+========================= */
+
 .entrance {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  position: relative;
-  text-align: center;
 }
 
 .logo-bg {
-  background: url('logo.png.PNG') no-repeat center center; /* full-screen centered */
+  background: url('logo.png.PNG') no-repeat center center;
   background-size: contain;
-  opacity: 0.1; /* faint like before */
+  opacity: 0.1;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
-  filter: brightness(1.6) drop-shadow(0 0 25px #bb86fc); /* keep glow */
 }
 
-/* Safe adjustment: move tagline down a bit */
 .tagline {
   font-size: 2.5em;
-  margin-top: 35vh; /* slightly lower to create space above */
-  text-align: center;
   color: #bb86fc;
   text-shadow: 0 0 10px #bb86fc, 0 0 20px #6200ee;
+  margin-bottom: 1.5em;
+  text-align: center;
 }
 
-/* =====================
-   Enter Button
-===================== */
+/* =========================
+   ENTER BUTTON
+========================= */
+
 .enter-btn {
-  display: block;
-  margin: 2em auto;
-  padding: 1em 2em;
+  padding: 1em 2.5em;
   font-size: 1.2em;
   background-color: transparent;
   border: 2px solid #bb86fc;
   color: #bb86fc;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  box-shadow: 0 0 10px #bb86fc;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 12px #bb86fc;
 }
 
 .enter-btn:hover {
   background-color: #bb86fc;
   color: black;
+  box-shadow: 0 0 30px #bb86fc;
 }
 
-/* =====================
-   Main Content
-===================== */
+/* =========================
+   MAIN CONTENT
+========================= */
+
 .main-content {
-  padding: 2em;
-  display: none;
+  padding: 3em 1.5em;
+  text-align: center;
   position: relative;
-  min-height: 100vh;
-}
-
-.main-content.hidden {
-  display: none;
+  z-index: 1;
 }
 
 .welcome {
-  text-align: center;
-  font-size: 2em;
+  font-size: 2.2em;
   color: #bb86fc;
-  text-shadow: 0 0 10px #bb86fc;
+  text-shadow: 0 0 12px #bb86fc;
 }
 
 .description {
-  max-width: 600px;
-  margin: 1em auto;
-  text-align: center;
-  color: white;
-  font-size: 1.1em;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  max-width: 650px;
+  margin: 1.5em auto;
+  font-size: 1.15em;
+  line-height: 1.8;
   text-shadow: 0 0 6px #6200ee;
 }
 
-/* =====================
-   Navigation Buttons
-===================== */
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 60px;
+  height: 60px;
+  background: rgba(187, 134, 252, 0.25);
+  border-radius: 50%;
+  animation: floatUp 12s infinite ease-in;
+}
+
+.bubble:nth-child(1) { left: 20%; animation-duration: 14s; }
+.bubble:nth-child(2) { left: 50%; width: 40px; height: 40px; animation-duration: 10s; }
+.bubble:nth-child(3) { left: 75%; animation-duration: 18s; }
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+
 .nav-buttons {
+  margin-top: 2em;
   display: flex;
   justify-content: center;
-  gap: 1.5em;
-  margin-top: 2em;
+  gap: 20px;
 }
 
 .nav-buttons button {
-  padding: 0.8em 1.5em;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 2px solid #bb86fc;
+  padding: 0.8em 1.8em;
   background: transparent;
+  border: 2px solid #bb86fc;
   color: #bb86fc;
+  font-size: 1em;
+  border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 8px #bb86fc;
+  box-shadow: 0 0 12px #bb86fc;
   transition: all 0.3s ease;
 }
 
 .nav-buttons button:hover {
-  background-color: #bb86fc;
+  background: #bb86fc;
   color: black;
+  box-shadow: 0 0 25px #bb86fc;
 }
 
-/* =====================
-   Animations
-===================== */
-.fade-in {
-  animation: fadeIn 0.6s forwards;
-}
+/* =========================
+   VISIBILITY & ANIMATIONS
+========================= */
 
-.fade-out {
-  animation: fadeOut 0.6s forwards;
-}
+.hidden { display: none; }
+
+.fade-in { animation: fadeIn 0.8s ease forwards; }
+.fade-out { animation: fadeOut 0.6s ease forwards; }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeOut {
@@ -143,71 +172,12 @@ body {
   to { opacity: 0; }
 }
 
-/* =====================
-   Animated Bubbles
-===================== */
-.animated-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -2; /* behind logo */
-}
+/* =========================
+   MOBILE TWEAKS
+========================= */
 
-.animated-bg .bubble {
-  position: absolute;
-  bottom: -50px;
-  width: 20px;
-  height: 20px;
-  background: #bb86fc;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: rise 6s infinite;
-}
-
-.animated-bg .bubble:nth-child(2) {
-  width: 25px;
-  height: 25px;
-  left: 30%;
-  animation-duration: 8s;
-  background: #6200ee;
-}
-
-.animated-bg .bubble:nth-child(3) {
-  width: 15px;
-  height: 15px;
-  left: 70%;
-  animation-duration: 5s;
-  background: #bb86fc;
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1.2);
-    opacity: 0;
-  }
-}
-
-/* =====================
-   Responsive
-===================== */
-@media screen and (max-width: 768px) {
-  .tagline {
-    font-size: 2em;
-    margin-top: 30vh;
-  }
-
-  .description {
-    font-size: 1em;
-    padding: 0 1em;
-  }
+@media (max-width: 768px) {
+  .tagline { font-size: 2em; padding: 0 1em; }
+  .welcome { font-size: 1.8em; }
+  .description { font-size: 1em; }
 }
