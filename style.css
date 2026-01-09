@@ -23,8 +23,8 @@ body {
 }
 
 .logo-bg {
-  background: url('logo.png.PNG') no-repeat center center;
-  background-size: cover; /* logo fills screen */
+  background: url('logo.png.PNG') no-repeat center top;
+  background-size: contain; /* keeps aspect ratio */
   position: absolute;
   width: 100%;
   height: 100%;
@@ -79,6 +79,10 @@ body {
   width: 100%;
   box-sizing: border-box;
   background: linear-gradient(135deg, #000000, #1a001a);
+}
+
+.main-content.hidden {
+  display: none;
 }
 
 .main-content-inner {
