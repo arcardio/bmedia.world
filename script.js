@@ -1,3 +1,4 @@
+// Enter button
 function enterSite() {
   const entrance = document.getElementById('entrance');
   const main = document.getElementById('mainContent');
@@ -11,6 +12,7 @@ function enterSite() {
   }, 600);
 }
 
+// Back button
 function goBack() {
   const entrance = document.getElementById('entrance');
   const main = document.getElementById('mainContent');
@@ -26,6 +28,11 @@ function goBack() {
   }, 600);
 }
 
+// Continue button
 function goNext() {
   alert('Next page coming next — this will be your interactive hub.');
 }
+
+// Add event listeners in case button IDs are used
+document.getElementById('backBtn').addEventListener('click', goBack);
+document.getElementById('nextBtn').addEventListener('click', goNext);
