@@ -29,9 +29,9 @@ h1 {
 }
 
 .logo-bg {
-  background: url('logo.png.PNG') no-repeat center center;
+  background: url('logo.png.PNG') no-repeat center 20%;
   background-size: contain;
-  opacity: 0.5;
+  opacity: 0.8;
   position: absolute;
   inset: 0;
   z-index: -1;
