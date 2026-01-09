@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brooks Media LLC</title>
   <link rel="stylesheet" href="style.css"/>
-  <!-- Google font for paragraph -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +16,7 @@
     <button class="enter-btn" onclick="enterSite()">Enter</button>
   </div>
 
-  <!-- Main Content Page -->
+  <!-- Main Content -->
   <div class="main-content hidden" id="mainContent">
 
     <!-- Animated background -->
@@ -40,10 +39,9 @@
 
     <!-- Navigation Buttons -->
     <div class="nav-buttons">
-      <button onclick="goBack()">← Back</button>
-      <button onclick="goNext()">Continue →</button>
+      <button id="backBtn">← Back</button>
+      <button id="nextBtn">Continue →</button>
     </div>
-
   </div>
 
   <!-- JS -->
