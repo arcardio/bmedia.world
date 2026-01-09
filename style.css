@@ -1,72 +1,150 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 body {
   margin: 0;
-  h1 {
-  font-family: 'Lettres Ombrees Ornees', serif;
-}
   background-color: black;
   color: white;
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: 'Lettres Ombrees Ornees', serif;
+}
+
+/* =========================
+   ENTRANCE PAGE
+========================= */
+
+.entrance {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-bg {
   background: url('logo.png.PNG') no-repeat center center;
   background-size: contain;
-  opacity: 0.10;
+  opacity: 0.1;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
 }
 
 .tagline {
-  text-align: center;
   font-size: 2.5em;
-  margin-top: 30vh;
   color: #bb86fc;
   text-shadow: 0 0 10px #bb86fc, 0 0 20px #6200ee;
+  margin-bottom: 1.5em;
+  text-align: center;
 }
 
+/* =========================
+   ENTER BUTTON
+========================= */
+
 .enter-btn {
-  display: block;
-  margin: 2em auto;
-  padding: 1em 2em;
+  padding: 1em 2.5em;
   font-size: 1.2em;
   background-color: transparent;
   border: 2px solid #bb86fc;
   color: #bb86fc;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  box-shadow: 0 0 10px #bb86fc;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 12px #bb86fc;
 }
 
 .enter-btn:hover {
   background-color: #bb86fc;
   color: black;
+  box-shadow: 0 0 30px #bb86fc;
 }
+
+/* =========================
+   MAIN CONTENT
+========================= */
 
 .main-content {
-  padding: 2em;
-  display: none;
-}
-
-.main-content.hidden {
-  display: none;
+  padding: 3em 1.5em;
+  text-align: center;
 }
 
 .welcome {
-  text-align: center;
-  font-size: 2em;
+  font-size: 2.2em;
   color: #bb86fc;
-  text-shadow: 0 0 10px #bb86fc;
+  text-shadow: 0 0 12px #bb86fc;
 }
 
 .description {
-  max-width: 600px;
-  margin: 1em auto;
-  text-align: center;
-  color: white;
+  max-width: 650px;
+  margin: 1.5em auto;
   font-size: 1.1em;
-  line-height: 1.6;
+  line-height: 1.7;
   text-shadow: 0 0 6px #6200ee;
+}
+
+/* =========================
+   VISIBILITY HELPERS
+========================= */
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* =========================
+   MOBILE TWEAKS
+========================= */
+
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 2em;
+    padding: 0 1em;
+  }
+
+  .welcome {
+    font-size: 1.8em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
 }
