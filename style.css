@@ -29,12 +29,15 @@ h1 {
 }
 
 .logo-bg {
-  background: url('logo.png.PNG') no-repeat center 35%;
+ background: url('logo.png.PNG') no-repeat center top; /* horizontally centered, top-aligned */
   background-size: contain;
-  opacity: 0.8;
+  opacity: 0.35; /* brighter than before */
   position: absolute;
-  inset: 0;
-  z-index: -1;
+  top: 8%;       /* fine-tuned vertical position above tagline */
+  left: 50%;     /* horizontal center */
+  transform: translateX(-50%); /* center precisely */
+  z-index: -1;   /* behind all content */
+  filter: brightness(1.6) drop-shadow(0 0 25px
 }
 
 .tagline {
