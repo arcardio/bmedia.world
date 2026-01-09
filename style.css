@@ -84,7 +84,7 @@ h1 {
   text-shadow: 0 0 12px #bb86fc;
 }
 
-/* Updated paragraph font */
+/* Paragraph font update */
 .description {
   font-family: 'Poppins', sans-serif;
   max-width: 650px;
@@ -102,7 +102,7 @@ h1 {
   position: fixed;
   inset: 0;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* ensures bubbles behind content */
 }
 
 .bubble {
@@ -115,35 +115,14 @@ h1 {
   animation: floatUp 12s infinite ease-in;
 }
 
-.bubble:nth-child(1) {
-  left: 20%;
-  animation-duration: 14s;
-}
-
-.bubble:nth-child(2) {
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  animation-duration: 10s;
-}
-
-.bubble:nth-child(3) {
-  left: 75%;
-  animation-duration: 18s;
-}
+.bubble:nth-child(1) { left: 20%; animation-duration: 14s; }
+.bubble:nth-child(2) { left: 50%; width: 40px; height: 40px; animation-duration: 10s; }
+.bubble:nth-child(3) { left: 75%; animation-duration: 18s; }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
+  from { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
 }
 
 /* =========================
@@ -192,23 +171,13 @@ h1 {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 /* =========================
