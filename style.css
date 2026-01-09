@@ -33,7 +33,7 @@ h1 {
   background-size: contain;
   opacity: 0.35; /* brighter than before */
   position: absolute;
-  top: 8%;       /* fine-tuned vertical position above tagline */
+  top: 3%;       /* fine-tuned vertical position above tagline */
   left: 50%;     /* horizontal center */
   transform: translateX(-50%); /* center precisely */
   z-index: -1;   /* behind all content */
