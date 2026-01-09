@@ -17,11 +17,15 @@ function goBack() {
   const entrance = document.getElementById('entrance');
   const main = document.getElementById('mainContent');
 
+  // Fade out main content
   main.classList.add('fade-out');
 
   setTimeout(() => {
+    // Hide main content
     main.classList.add('hidden');
-    main.classList.remove('fade-out');
+    main.classList.remove('fade-out', 'fade-in');
+
+    // Show entrance
     entrance.style.display = 'flex';
     entrance.classList.remove('fade-out');
     entrance.classList.add('fade-in');
