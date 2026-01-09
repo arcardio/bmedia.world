@@ -3,11 +3,20 @@ function enterSite() {
   document.getElementById('mainContent').classList.remove('hidden');
 }
 
-document.getElementById('backBtn').addEventListener('click', function() {
-  document.getElementById('mainContent').classList.add('hidden');
-  document.getElementById('entrance').style.display = 'flex';
-});
+window.onload = function() {
+  const backBtn = document.getElementById('backBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-document.getElementById('nextBtn').addEventListener('click', function() {
-  alert('Page 2 not designed yet');
-});
+  if (backBtn) {
+    backBtn.addEventListener('click', function() {
+      document.getElementById('mainContent').classList.add('hidden');
+      document.getElementById('entrance').style.display = 'flex';
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      alert('Page 2 not designed yet');
+    });
+  }
+};
