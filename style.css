@@ -40,7 +40,7 @@ body {
   100% { filter: brightness(1.2) drop-shadow(0 0 40px #bb86fc); }
 }
 
-/* Glowing Enter button */
+/* Glowing floating Enter button */
 .enter-btn {
   margin-bottom: 8vh;
   padding: 1.2em 3em;
@@ -52,20 +52,62 @@ body {
   cursor: pointer;
   box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset;
   transition: all 0.3s ease;
-  animation: pulseBtn 2s infinite alternate;
+  animation: pulseBtn 2s infinite alternate, floatBtn 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
 }
 
 .enter-btn:hover {
   background-color: #bb86fc;
   color: black;
-  box-shadow: 0 0 30px #bb86fc, 0 0 50px #6200ee inset;
+  box-shadow: 0 0 35px #bb86fc, 0 0 60px #6200ee inset;
 }
 
-/* pulsing glow animation for button */
+/* pulse animation for button glow */
 @keyframes pulseBtn {
   0% { box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset; }
   50% { box-shadow: 0 0 25px #bb86fc, 0 0 45px #6200ee inset; }
   100% { box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset; }
+}
+
+/* float up and down */
+@keyframes floatBtn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Sparkles at bottom */
+.sparkle-container {
+  position: absolute;
+  bottom: 5vh; /* above button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 50px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #bb86fc;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkleUp 2s infinite;
+}
+
+.sparkle:nth-child(1) { left: 20%; animation-delay: 0s; }
+.sparkle:nth-child(2) { left: 50%; animation-delay: 0.5s; }
+.sparkle:nth-child(3) { left: 80%; animation-delay: 1s; }
+
+@keyframes sparkleUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-15px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateY(-30px) scale(0.8); opacity: 0; }
 }
 
 /* =====================
@@ -147,7 +189,7 @@ body {
 @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
 
 /* =====================
-   Animated Bubbles
+   Animated Bubbles (Page 2)
 ===================== */
 .animated-bg {
   position: absolute;
@@ -198,66 +240,4 @@ body {
 @media screen and (max-width: 768px) {
   .enter-btn { font-size: 1.2em; padding: 1em 2em; margin-bottom: 5vh; }
   .description { font-size: 1em; padding: 0 1em; }
-}
-/* Floating Enter button */
-.enter-btn {
-  margin-bottom: 8vh;
-  padding: 1.2em 3em;
-  font-size: 1.5em;
-  background-color: rgba(187, 134, 252, 0.25);
-  border: 2px solid #bb86fc;
-  border-radius: 12px;
-  color: #bb86fc;
-  cursor: pointer;
-  box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset;
-  transition: all 0.3s ease;
-  animation: pulseBtn 2s infinite alternate, floatBtn 3s ease-in-out infinite;
-  position: relative;
-  z-index: 1;
-}
-
-/* Floating motion */
-@keyframes floatBtn {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* Sparkle particles on hover */
-.enter-btn::before,
-.enter-btn::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #bb86fc;
-  border-radius: 50%;
-  opacity: 0.7;
-  pointer-events: none;
-  animation: sparkle 1.5s infinite;
-}
-
-.enter-btn::before {
-  top: -10px;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.enter-btn::after {
-  top: -10px;
-  right: 10%;
-  animation-delay: 0.75s;
-}
-
-@keyframes sparkle {
-  0% { transform: translateY(0) scale(1); opacity: 0.7; }
-  50% { transform: translateY(-5px) scale(1.2); opacity: 0.4; }
-  100% { transform: translateY(0) scale(1); opacity: 0.7; }
-}
-
-/* Optional: Increase glow on hover */
-.enter-btn:hover {
-  background-color: #bb86fc;
-  color: black;
-  box-shadow: 0 0 35px #bb86fc, 0 0 60px #6200ee inset;
 }
