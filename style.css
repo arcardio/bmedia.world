@@ -74,6 +74,8 @@ h1 {
 .main-content {
   padding: 3em 1.5em;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .welcome {
@@ -82,25 +84,104 @@ h1 {
   text-shadow: 0 0 12px #bb86fc;
 }
 
+/* Updated paragraph font */
 .description {
+  font-family: 'Poppins', sans-serif;
   max-width: 650px;
   margin: 1.5em auto;
-  font-size: 1.1em;
-  line-height: 1.7;
+  font-size: 1.15em;
+  line-height: 1.8;
   text-shadow: 0 0 6px #6200ee;
 }
 
 /* =========================
-   VISIBILITY HELPERS
+   CARTOON ANIMATED BACKGROUND
+========================= */
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 60px;
+  height: 60px;
+  background: rgba(187, 134, 252, 0.25);
+  border-radius: 50%;
+  animation: floatUp 12s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+  left: 20%;
+  animation-duration: 14s;
+}
+
+.bubble:nth-child(2) {
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 10s;
+}
+
+.bubble:nth-child(3) {
+  left: 75%;
+  animation-duration: 18s;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+
+.nav-buttons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-buttons button {
+  padding: 0.8em 1.8em;
+  background: transparent;
+  border: 2px solid #bb86fc;
+  color: #bb86fc;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #bb86fc;
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background: #bb86fc;
+  color: black;
+  box-shadow: 0 0 25px #bb86fc;
+}
+
+/* =========================
+   VISIBILITY & ANIMATIONS
 ========================= */
 
 .hidden {
   display: none;
 }
-
-/* =========================
-   ANIMATIONS
-========================= */
 
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
