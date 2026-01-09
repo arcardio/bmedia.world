@@ -1,183 +1,197 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
-
+/* =====================
+   Global Styles
+===================== */
 body {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
   background-color: black;
   color: white;
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-family: 'Lettres Ombrees Ornees', serif;
-}
-
-/* =========================
-   ENTRANCE PAGE
-========================= */
-
+/* =====================
+   Entrance Page
+===================== */
 .entrance {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end; /* button at bottom */
   justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
 }
 
 .logo-bg {
   background: url('logo.png.PNG') no-repeat center center;
-  background-size: contain;
-  opacity: 0.1;
+  background-size: cover; /* logo fills screen */
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
+  filter: brightness(1.2) drop-shadow(0 0 40px #bb86fc);
+  animation: logoPulse 6s infinite alternate;
 }
 
-.tagline {
-  font-size: 2.5em;
-  color: #bb86fc;
-  text-shadow: 0 0 10px #bb86fc, 0 0 20px #6200ee;
-  margin-bottom: 1.5em;
-  text-align: center;
+/* subtle pulse animation for logo */
+@keyframes logoPulse {
+  0% { filter: brightness(1.2) drop-shadow(0 0 40px #bb86fc); }
+  50% { filter: brightness(1.3) drop-shadow(0 0 60px #bb86fc); }
+  100% { filter: brightness(1.2) drop-shadow(0 0 40px #bb86fc); }
 }
 
-/* =========================
-   ENTER BUTTON
-========================= */
-
+/* Glowing Enter button */
 .enter-btn {
-  padding: 1em 2.5em;
-  font-size: 1.2em;
-  background-color: transparent;
+  margin-bottom: 8vh;
+  padding: 1.2em 3em;
+  font-size: 1.5em;
+  background-color: rgba(187, 134, 252, 0.25);
   border: 2px solid #bb86fc;
-  color: #bb86fc;
   border-radius: 12px;
+  color: #bb86fc;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 12px #bb86fc;
+  box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset;
+  transition: all 0.3s ease;
+  animation: pulseBtn 2s infinite alternate;
 }
 
 .enter-btn:hover {
   background-color: #bb86fc;
   color: black;
-  box-shadow: 0 0 30px #bb86fc;
+  box-shadow: 0 0 30px #bb86fc, 0 0 50px #6200ee inset;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* pulsing glow animation for button */
+@keyframes pulseBtn {
+  0% { box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset; }
+  50% { box-shadow: 0 0 25px #bb86fc, 0 0 45px #6200ee inset; }
+  100% { box-shadow: 0 0 15px #bb86fc, 0 0 30px #6200ee inset; }
+}
 
+/* =====================
+   Main Content (Page 2)
+===================== */
 .main-content {
-  padding: 3em 1.5em;
-  text-align: center;
+  padding: 0;
+  display: none;
   position: relative;
-  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #000000, #1a001a);
+}
+
+.main-content-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2em;
+  text-align: center;
 }
 
 .welcome {
-  font-size: 2.2em;
+  font-size: 2em;
   color: #bb86fc;
-  text-shadow: 0 0 12px #bb86fc;
+  text-shadow: 0 0 10px #bb86fc;
+  margin-bottom: 1em;
 }
 
 .description {
-  font-family: 'Poppins', sans-serif;
-  max-width: 650px;
-  margin: 1.5em auto;
-  font-size: 1.15em;
-  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 2em auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: white;
   text-shadow: 0 0 6px #6200ee;
 }
 
-/* =========================
-   ANIMATED BACKGROUND
-========================= */
-
-.animated-bg {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.bubble {
-  position: absolute;
-  bottom: -100px;
-  width: 60px;
-  height: 60px;
-  background: rgba(187, 134, 252, 0.25);
-  border-radius: 50%;
-  animation: floatUp 12s infinite ease-in;
-}
-
-.bubble:nth-child(1) { left: 20%; animation-duration: 14s; }
-.bubble:nth-child(2) { left: 50%; width: 40px; height: 40px; animation-duration: 10s; }
-.bubble:nth-child(3) { left: 75%; animation-duration: 18s; }
-
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 0; }
-  20% { opacity: 1; }
-  to { transform: translateY(-120vh); opacity: 0; }
-}
-
-/* =========================
-   NAV BUTTONS
-========================= */
-
+/* =====================
+   Navigation Buttons
+===================== */
 .nav-buttons {
-  margin-top: 2em;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5em;
 }
 
 .nav-buttons button {
-  padding: 0.8em 1.8em;
-  background: transparent;
-  border: 2px solid #bb86fc;
-  color: #bb86fc;
+  padding: 0.8em 1.5em;
   font-size: 1em;
-  border-radius: 10px;
+  border-radius: 8px;
+  border: 2px solid #bb86fc;
+  background: transparent;
+  color: #bb86fc;
   cursor: pointer;
-  box-shadow: 0 0 12px #bb86fc;
+  box-shadow: 0 0 8px #bb86fc;
   transition: all 0.3s ease;
 }
 
 .nav-buttons button:hover {
-  background: #bb86fc;
+  background-color: #bb86fc;
   color: black;
-  box-shadow: 0 0 25px #bb86fc;
 }
 
-/* =========================
-   VISIBILITY & ANIMATIONS
-========================= */
+/* =====================
+   Fade Animations
+===================== */
+.fade-in { animation: fadeIn 0.6s forwards; }
+.fade-out { animation: fadeOut 0.6s forwards; }
 
-.hidden { display: none; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
 
-.fade-in { animation: fadeIn 0.8s ease forwards; }
-.fade-out { animation: fadeOut 0.6s ease forwards; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+/* =====================
+   Animated Bubbles
+===================== */
+.animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -2;
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+.animated-bg .bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background: #bb86fc;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: rise 6s infinite;
 }
 
-/* =========================
-   MOBILE TWEAKS
-========================= */
+.animated-bg .bubble:nth-child(2) {
+  width: 25px;
+  height: 25px;
+  left: 30%;
+  animation-duration: 8s;
+  background: #6200ee;
+}
 
-@media (max-width: 768px) {
-  .tagline { font-size: 2em; padding: 0 1em; }
-  .welcome { font-size: 1.8em; }
-  .description { font-size: 1em; }
+.animated-bg .bubble:nth-child(3) {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 5s;
+  background: #bb86fc;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+/* =====================
+   Responsive
+===================== */
+@media screen and (max-width: 768px) {
+  .enter-btn { font-size: 1.2em; padding: 1em 2em; margin-bottom: 5vh; }
+  .description { font-size: 1em; padding: 0 1em; }
 }
