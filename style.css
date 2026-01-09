@@ -117,10 +117,13 @@ body {
   padding: 0;
   display: none;
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh; /* ensures full screen */
   width: 100%;
   box-sizing: border-box;
   background: linear-gradient(135deg, #000000, #1a001a);
+  display: flex; /* ensures full-screen layout */
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content.hidden {
