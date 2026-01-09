@@ -21,14 +21,18 @@ function goBack() {
   main.classList.add('fade-out');
 
   setTimeout(() => {
-    // Hide main content
+    // Hide main content completely
     main.classList.add('hidden');
     main.classList.remove('fade-out', 'fade-in');
 
-    // Show entrance
+    // Show entrance page
     entrance.style.display = 'flex';
+    entrance.style.zIndex = '2'; // make sure entrance is above main
     entrance.classList.remove('fade-out');
     entrance.classList.add('fade-in');
+
+    // Reset main content z-index just in case
+    main.style.zIndex = '1';
   }, 600);
 }
 
