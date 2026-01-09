@@ -4,49 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brooks Media LLC</title>
-
-  <!-- CSS with cache-buster -->
   <link rel="stylesheet" href="style.css?v=1"/>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Entrance Page -->
-  <div class="entrance" id="entrance" style="display:flex;">
+  <div class="entrance" id="entrance">
     <div class="logo-bg"></div>
-    <h1 class="tagline">A Place Where Ideas Thrive</h1>
     <button class="enter-btn" onclick="enterSite()">Enter</button>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main Content Page (Page 2) -->
   <div class="main-content hidden" id="mainContent">
-
-    <!-- Animated background -->
     <div class="animated-bg">
       <span class="bubble"></span>
       <span class="bubble"></span>
       <span class="bubble"></span>
     </div>
 
-    <!-- Content -->
-    <h1 class="welcome">Welcome to Brooks Media LLC</h1>
+    <div class="main-content-inner">
+      <h1 class="welcome">Welcome to Brooks Media LLC</h1>
+      <p class="description">
+        At Brooks Media LLC, we bring creativity to life. From video editing to graphic design, 
+        influencer management, and equipment rentals, we give you the tools to make your vision real.
+      </p>
 
-    <!-- Paragraph -->
-    <p class="description">
-      At Brooks Media LLC, we bring creativity to life. From video editing to graphic design, 
-      influencer management, and equipment rentals, we give you the tools to make your vision real.
-    </p>
-
-    <!-- Navigation Buttons -->
-    <div class="nav-buttons">
-      <button id="backBtn">← Back</button>
-      <button id="nextBtn">Continue →</button>
+      <div class="nav-buttons">
+        <button id="backBtn">← Back</button>
+        <button id="nextBtn">Continue →</button>
+      </div>
     </div>
   </div>
 
-  <!-- JS with cache-buster -->
   <script src="script.js?v=1"></script>
 </body>
 </html>
